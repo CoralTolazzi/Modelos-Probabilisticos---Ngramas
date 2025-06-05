@@ -68,14 +68,14 @@ def get_wordnet_pos(word):
 
 
 def n_grama(oraciones_limpias):
-    print(f"\nn-grama:")
+    print(f"\nn-grama (bi-gramas y tri-gramas con al menos 2 repeticiones):")
     vectorizer = CountVectorizer(ngram_range=(2, 3), min_df=2)
     X = vectorizer.fit_transform(oraciones_limpias)
     vocab = vectorizer.get_feature_names_out()
     counts = X.toarray().sum(axis=0)
     freqs = Counter(dict(zip(vocab, counts)))
     print(list(freqs.keys()))
-    print("\ncantidad de N-Gramas ( bi-gramas y tri-gramas):",len(freqs))
+    print("\ncantidad de N-Gramas (bi-gramas y tri-gramas con al menos 2 repeticiones):",len(freqs))
     return freqs
 
 
