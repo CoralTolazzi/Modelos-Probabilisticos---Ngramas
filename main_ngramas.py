@@ -75,6 +75,7 @@ def n_grama(oraciones_limpias):
     counts = X.toarray().sum(axis=0)
     freqs = Counter(dict(zip(vocab, counts)))
     print(list(freqs.keys()))
+    print("\ncantidad de N-Gramas:",len(freqs))
     return freqs
 
 
